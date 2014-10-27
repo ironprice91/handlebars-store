@@ -2,16 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
+    <title>Handlebars Store</title>
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
-  <body>
+  <body class="container">
+
+    <div id="product-container" class="col-md-8"></div>
+    <ul id="wishlist" class="col-md-4"><h1>Wishlist</h1></ul>
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
     <script src="main.js"></script>
+    <script src="products-data.js"></script>
+
+    <script id="store" type="text/x-handlebars-template">
+      <div class="product">
+          <h1>{{title}}</h1>
+          <img src="{{image}}">        
+          <p><strong>Price:</strong> ${{cost}}</p>
+          <button class="add">Add to Wishlist</button>
+      </div>
+    </script>
+  
+    <script id="wishlist-items" type="text/x-handlebars-template">
+      <li class="game">
+        <h6>{{title}}</h6>
+        <button class="remove">Remove</button>
+      </li>
+    </script>
 
   </body>
 </html>
